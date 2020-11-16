@@ -1,0 +1,5 @@
+django
+django-rest-framework
+whitenoise
+pylint
+djangorestframework_simplejwt
