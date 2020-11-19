@@ -1,6 +1,6 @@
 <template>
   <v-card min-width="400" max-width="500">
-    <v-form v-model="valid">
+    <v-form>
       <v-container>
         <v-col>
           <v-row>
@@ -10,7 +10,7 @@
             <v-text-field v-model="user.password" label="Password" type="password" required></v-text-field>
           </v-row>
           <v-row>
-            <v-btn type="submit" color="secondary">Submit</v-btn>
+            <v-btn type="submit" color="secondary" @click="handleLogin">Submit</v-btn>
           </v-row>
         </v-col>
       </v-container>

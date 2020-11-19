@@ -44,9 +44,9 @@
       <v-toolbar-title class="hidden-sm-and-down">{{appTitle}}</v-toolbar-title>
 
       <v-spacer class="hidden-sm-and-down"></v-spacer>
-      <router-link v-if="!currentUser" to="/login" class="nav-link mx-2">login</router-link>
-      <v-btn v-if="currentUser" color="secondary" class="hidden-sm-and-down" to="/profile">
-        <v-icon color="primary">mdi-user</v-icon>
+      <router-link v-if="!currentUser" to="/login" class="hidden-sm-and-down nav-link mx-2">login</router-link>
+      <v-btn fab small depressed v-if="currentUser" color="secondary" class="hidden-sm-and-down" to="/profile">
+        <v-icon>mdi-account</v-icon>
       </v-btn>
     </v-app-bar>
   </span>
@@ -71,7 +71,7 @@ export default {
   props: {
   },
   computed: {
-    currentUser() {
+    currentUser: function () {
       return this.$store.state.auth.user
     }
   },

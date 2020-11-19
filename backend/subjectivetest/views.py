@@ -1,7 +1,9 @@
 from django.shortcuts import render
 from django.contrib.auth.models import User, Group
 from rest_framework import viewsets, permissions
+from rest_framework_simplejwt.views import TokenObtainPairView
 from .serializers import (
+    UserTokenObtainPairSerializer,
     UserSerializer, GroupSerializer,
     OccupantSerializer,
     BodyZoneSerializer,
@@ -18,6 +20,9 @@ from .models import (
     LocalResponseModel,
     ProfileModel
 )
+
+class MyTokenObtainPairView(TokenObtainPairView):
+    serializer_class = UserTokenObtainPairSerializer
 
 class UserViewSet(viewsets.ModelViewSet):
     """
